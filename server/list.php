@@ -1,13 +1,5 @@
-{
-	"data": [{
-		"title": "Get eggs",
-		"description": "Go to the store and ...",
-		"dueDate": "2018-03-18",
-		"id": 20
-	}, {
-		"title": "wash dog",
-		"description": "he is a damn stinky ...",
-		"dueDate": "2018-04-18",
-		"id": 22
-	}]
-}
+<?php
+
+require_once( 'mysqlConnect.php');
+
+?>
