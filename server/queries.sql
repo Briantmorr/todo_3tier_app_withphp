@@ -7,3 +7,4 @@ tu.username AS todoOwner
 	JOIN todoUsers AS tu 
 		ON td.owner = tu.ID
 	WHERE td.status = 'active'
+	ORDER BY td.dueDate ASC

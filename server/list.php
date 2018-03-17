@@ -6,7 +6,8 @@ tu.username AS todoOwner
 	FROM todoData AS td
 	JOIN todoUsers AS tu 
 		ON td.owner = tu.ID
-	WHERE td.status = 'active'";
+	WHERE td.status = 'active'
+	ORDER BY td.dueDate ASC";
 
 $result = mysqli_query($conn, $query);
 
@@ -19,6 +20,9 @@ $output = [
 if($result){  //if the query didn't screw up
 	if(mysqli_num_rows($result)>0){  //if there was data in the query result
 		while( $row = mysqli_fetch_assoc($result)){ //go through each one and grab the data
+			if(strlen($row['description']) > 20){
+				$row['description'] = substr($row['description'], 0, 20) . '...';
+			}
 			$output['data'][] = $row;  //push it into an array
 			$output['success'] = true;
 		}
