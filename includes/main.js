@@ -10,7 +10,7 @@ function attachHandlers(){
 
 function readData(){
 	var ajaxOptions = {
-		url: 'list.json',
+		url: 'server/list.php',
 		dataType: 'json',
 		success: dataReceivedFromServer
 	}
